@@ -1,7 +1,7 @@
 import cassandraDb from "@/cassandra";
 import { NextResponse } from "next/server";
 
-export async function GET (res:Response) {
+export async function GET (req: Request, res: Response) {
     try {
 
         const query = `select user_id, comment_id, comment, dateOf(post_id) AS post_date from comments`;
